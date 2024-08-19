@@ -1,4 +1,5 @@
 const $ = require('jquery');
+// Load the full build
 const _ = require('lodash');
 
 let count = 0;
