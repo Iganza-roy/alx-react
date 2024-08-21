@@ -1,5 +1,4 @@
 const $ = require('jquery');
-// Load the full build
 const _ = require('lodash');
 import '../css/main.css';
 
