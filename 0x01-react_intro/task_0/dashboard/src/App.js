@@ -12,6 +12,13 @@ function App() {
       <hr />
       <body className='App-body'>
         <p>Login to access the full dashboard</p>
+        <label>
+          <input></input>
+        </label>
+        <label>
+          <input></input>
+        </label>
+        <button>OK</button>
       </body>
       <hr />
       <footer className='App-footer'>
