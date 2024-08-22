@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+}
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header img {
+  width: 120px;
+}
+
+header h1 {
+  color: red;
+}
+
+hr {
+  border-color: red;
+}
+
+.App-footer {
+  text-align: center;
+  font-style: italic;
+}
