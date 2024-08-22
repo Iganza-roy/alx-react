@@ -1,17 +1,23 @@
-body {
+.App-body {
   height: 100vh;
+  padding: 10px;
 }
+
+.App-header {
+  padding: 12px;
+}
+
 .App-header {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-header img {
+.App-header img {
   width: 120px;
 }
 
-header h1 {
+.App-header h1 {
   color: red;
 }
 
