@@ -1,11 +1,6 @@
 .Notifications {
-  border: 1px solid;
   padding: 5px;
-}
-
-.Notifications {
-  padding: 50px;
-  border: #e01d3f;
+  border: 1px dotted #e01d3f;
 }
 
 .Notifications button img {

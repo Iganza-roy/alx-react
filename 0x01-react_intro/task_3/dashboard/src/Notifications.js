@@ -11,7 +11,7 @@ function Notifications() {
         <button
           style={{
             float: 'right',
-            marginTop: '-70px',
+            marginTop: '-40px',
             backgroundColor: '#fff',
             border: 'none',
           }}
