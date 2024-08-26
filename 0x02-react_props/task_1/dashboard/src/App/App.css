@@ -1,0 +1,8 @@
+.App-body {
+  height: 100vh;
+  padding: 10px;
+}
+
+hr {
+  border-color: red;
+}
