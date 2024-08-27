@@ -23,7 +23,12 @@ function Notifications() {
         <ul>
           <NotificationItem type='default' value='New course available' />
           <NotificationItem type='urgent' value='New resume available' />
-          <NotificationItem type='urgent' html={getLatestNotification()} />
+          <NotificationItem
+            type='urgent'
+            dangerouslySetInnerHTML={{
+              __html: getLatestNotification(),
+            }}
+          />
         </ul>
       </div>
     </>
