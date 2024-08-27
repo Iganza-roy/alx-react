@@ -1,27 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import NotificationItem from './NotificationItem';
+import { shallow } from 'enzyme';
 
-const NotificationItem = ({ type, html, value }) => {
-  return (
-    <li
-      data-notification-type={type}
-      dangerouslySetInnerHTML={html ? html : undefined}
-    >
-      {!html && value}
-    </li>
-  );
-};
+describe('rendering components', () => {
+  it('renders NotificationItem component without crashing', () => {
+    const wrapper = shallow(<NotificationItem />);
 
-NotificationItem.propTypes = {
-  type: PropTypes.string.isRequired,
-  html: PropTypes.shape({
-    __html: PropTypes.string.isRequired,
-  }),
-  value: PropTypes.string,
-};
+    expect(wrapper.exists()).toBe(true);
+  });
 
-NotificationItem.defaultProps = {
-  type: 'default',
-};
+  it('renders correct html from type="default" value="test" props', () => {
+    const wrapper = shallow(<NotificationItem />);
 
-export default NotificationItem;
+    wrapper.setProps({ type: 'default', value: 'test' });
+    expect(wrapper.html()).toEqual(
+      '<li data-notification-type="default">test</li>'
+    );
+  });
+
+  it('renders correct html from  html="<u>test</u>" props', () => {
+    const wrapper = shallow(<NotificationItem />);
+
+    wrapper.setProps({ html: '<u>test</u>' });
+    expect(wrapper.html()).toEqual('<li data-urgent="true"><u>test</u></li>');
+  });
+});
