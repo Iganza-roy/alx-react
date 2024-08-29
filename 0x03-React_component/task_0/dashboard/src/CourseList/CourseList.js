@@ -4,7 +4,7 @@ import CourseListRow from './CourseListRow';
 import PropTypes from 'prop-types';
 import CourseShape from './CourseShape';
 
-function CourseList({ listCourses }) {
+function CourseList({ listCourses = [] }) {
   return (
     <table id='CourseList'>
       <thead>
@@ -34,10 +34,6 @@ function CourseList({ listCourses }) {
 
 CourseList.propTypes = {
   listCourses: PropTypes.arrayOf(CourseShape),
-};
-
-CourseList.defaultProps = {
-  listCourses: [],
 };
 
 export default CourseList;
