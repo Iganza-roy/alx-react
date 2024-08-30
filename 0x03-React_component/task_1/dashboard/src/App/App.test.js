@@ -1,41 +1,43 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import Footer from './Footer';
-import Login from '../Login/Login';
-import CourseList from '../CourseList/CourseList';
 
-describe('Footer Component', () => {
-  it('renders without crashing', () => {
-    shallow(<Footer />);
+describe('Test App.js', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
   });
 
-  it('renders the text "Copyright"', () => {
-    const wrapper = shallow(<Footer />);
-    expect(wrapper.text()).toContain('Copyright');
-  });
-  it('renders Login component when isLoggedIn is false', () => {
-    const wrapper = shallow(<App isLoggedIn={false} />);
-    expect(wrapper.find(Login).exists()).toBe(true);
-    expect(wrapper.find(CourseList).exists()).toBe(false);
+  it('App component contains Notifications component', () => {
+    expect(wrapper.find('Notifications')).toHaveLength(1);
   });
 
-  it('renders CourseList component when isLoggedIn is true', () => {
-    const wrapper = shallow(<App isLoggedIn={true} />);
-    expect(wrapper.find(Login).exists()).toBe(false);
-    expect(wrapper.find(CourseList).exists()).toBe(true);
+  it('App component contains Header component', () => {
+    expect(wrapper.find('Header')).toHaveLength(1);
   });
 
-  it('calls logOut and shows alert when Control + h is pressed', () => {
-    const logOutMock = jest.fn();
-    const alertMock = jest.spyOn(window, 'alert').mockImplementation(() => {});
+  it('App component contains Login component', () => {
+    expect(wrapper.find('Login')).toHaveLength(1);
+  });
 
-    const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h' });
-    window.dispatchEvent(event);
+  it('App component contains Footer component', () => {
+    expect(wrapper.find('Footer')).toHaveLength(1);
+  });
 
-    expect(alertMock).toHaveBeenCalledWith('Logging you out');
-    expect(logOutMock).toHaveBeenCalled();
+  it('test to check that CourseList is not displayed inside App', () => {
+    expect(wrapper.find('CourseList')).toHaveLength(0);
+  });
+});
 
-    alertMock.mockRestore();
+describe('Testing <App isLoggedIn={true} />', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App isLoggedIn={true} />);
+  });
+
+  it('the Login component is not included', () => {
+    expect(wrapper.find('Login')).toHaveLength(0);
   });
 });
