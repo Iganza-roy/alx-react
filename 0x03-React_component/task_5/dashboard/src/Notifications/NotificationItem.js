@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class NotificationItem extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return this.props.value ? (
       <li
