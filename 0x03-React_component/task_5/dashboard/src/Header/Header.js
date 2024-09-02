@@ -1,13 +1,14 @@
-import holberton_logo from '../Assets/holberton-logo.jpg';
+import React from 'react';
+import logo from '../assets/holberton_logo.jpg';
 import './Header.css';
 
-const Header = () => {
+function Header() {
   return (
-    <div className='App-header'>
-      <img src={holberton_logo} alt='logo' />
+    <div className="App-header">
+      <img src={logo} alt="logo" />
       <h1>School dashboard</h1>
     </div>
-  );
-};
+  )
+}
 
 export default Header;
