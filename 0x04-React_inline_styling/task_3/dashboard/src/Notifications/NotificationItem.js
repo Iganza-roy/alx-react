@@ -6,7 +6,7 @@ class NotificationItem extends React.PureComponent {
   constructor(props) {
     super(props);
     this.selected_style =
-      this.props.type === 'default' ? itemStyles.default : itemStyles.urgent;
+      this.props.type === 'default' ? styles.default : styles.urgent;
   }
 
   render() {
@@ -14,7 +14,7 @@ class NotificationItem extends React.PureComponent {
       <li
         data-notification-type={this.props.type}
         onClick={() => this.props.markAsRead(this.props.id)}
-        className={css(this.selected_style, itemStyles.li)}
+        className={css(this.selected_style)}
       >
         {this.props.value}
       </li>
@@ -22,24 +22,16 @@ class NotificationItem extends React.PureComponent {
       <li
         data-notification-type={this.props.type}
         dangerouslySetInnerHTML={this.props.html}
-        onClick={() => this.props.markAsRead(this.props.id)}
-        className={css(this.selected_style, itemStyles.li)}
+        onClick={() => {
+          console.log('empty func');
+        }}
+        className={css(this.selected_style)}
       ></li>
     );
   }
 }
 
-const itemStyles = StyleSheet.create({
-  li: {
-    '@media (max-width: 900px)': {
-      listStyle: 'none',
-      borderBottom: '1px solid black',
-      padding: '10px 8px',
-      margin: 0,
-      width: '100%',
-      fontSize: '20px',
-    },
-  },
+const styles = StyleSheet.create({
   urgent: {
     color: 'red',
   },
@@ -51,7 +43,9 @@ const itemStyles = StyleSheet.create({
 
 NotificationItem.defaultProps = {
   type: 'default',
-  markAsRead: () => {},
+  markAsRead: () => {
+    console.log('empty func');
+  },
   id: 0,
 };
 

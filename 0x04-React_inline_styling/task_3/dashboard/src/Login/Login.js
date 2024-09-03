@@ -29,10 +29,6 @@ function Login() {
 const styles = StyleSheet.create({
   AppBody: {
     padding: '36px 24px',
-    '@media (max-width: 900px)': {
-      display: 'flex',
-      flexDirection: 'column',
-    },
   },
   input: {
     margin: '0 16px 0 8px',
