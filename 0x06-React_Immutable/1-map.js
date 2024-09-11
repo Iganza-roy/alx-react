@@ -1,5 +1,7 @@
 const { Map } = require('immutable');
 
 const getImmutableObject = (object) => {
-  return Mao(object);
+  return Map(object);
 };
+
+export default getImmutableObject();
