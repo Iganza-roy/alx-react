@@ -18,11 +18,6 @@ export const normalizedData = normalize(notifications_data, [notification]);
 
 export function getAllNotificationsByUser(userId) {
   return notifications_data
-    .filter(
-      (notificationId) => notifications[notificationId].author.id === userId
-    )
-    .map((notificationId) => {
-      const contextId = notifications[notificationId].context;
-      return messages[contextId];
-    });
+    .filter((notification) => notification.author.id === userId)
+    .map((notification) => notification.context);
 }
