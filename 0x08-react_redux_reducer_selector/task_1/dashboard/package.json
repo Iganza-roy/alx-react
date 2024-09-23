@@ -36,6 +36,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "aphrodite": "^2.4.0",
+    "immutable": "^4.3.7",
     "normalizr": "^3.6.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
