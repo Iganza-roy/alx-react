@@ -1,0 +1,1 @@
+This directory contains my tasks on the react redux connectors and providers project
