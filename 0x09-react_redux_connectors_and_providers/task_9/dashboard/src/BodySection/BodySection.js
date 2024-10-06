@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { StyleSheet, css } from "aphrodite";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 
 class BodySection extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class BodySection extends Component {
 }
 
 BodySection.defaultProps = {
-  title: "",
+  title: '',
 };
 
 BodySection.propTypes = {
@@ -27,24 +27,24 @@ BodySection.propTypes = {
 };
 
 const screenSize = {
-  small: "@media screen and (max-width: 900px)",
+  small: '@media screen and (max-width: 900px)',
 };
 
 const styles = StyleSheet.create({
   bodySection: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "100%",
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: '100%',
     [screenSize.small]: {
-      boxSizing: "border-box",
-      paddingLeft: "50px",
-      paddingRight: "50px",
-      paddingBottom: "20px",
+      boxSizing: 'border-box',
+      paddingLeft: '50px',
+      paddingRight: '50px',
+      paddingBottom: '20px',
     },
   },
 
   bodySectionH2: {
-    width: "100%",
+    width: '100%',
   },
 });
 
