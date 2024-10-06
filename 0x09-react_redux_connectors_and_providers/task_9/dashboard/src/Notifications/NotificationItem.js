@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StyleSheet, css } from "aphrodite";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 
 const NotificationItem = React.memo(function NotificationItem({
   type,
@@ -11,10 +11,10 @@ const NotificationItem = React.memo(function NotificationItem({
 }) {
   let listItem;
 
-  let typeStyle = css(type === "urgent" ? styles.urgent : styles.default);
+  let typeStyle = css(type === 'urgent' ? styles.urgent : styles.default);
 
   if (value) {
-    if (type === "noNotifications") {
+    if (type === 'noNotifications') {
       listItem = (
         <li
           className={css(styles.noNotifications)}
@@ -49,8 +49,8 @@ const NotificationItem = React.memo(function NotificationItem({
 });
 
 NotificationItem.defaultProps = {
-  type: "default",
-  value: "",
+  type: 'default',
+  value: '',
   html: {},
   markAsRead: () => {},
   id: NaN,
@@ -67,35 +67,35 @@ NotificationItem.propTypes = {
 };
 
 const screenSize = {
-  small: "@media screen and (max-width: 900px)",
+  small: '@media screen and (max-width: 900px)',
 };
 
 const listItemSmall = {
-  listStyle: "none",
-  borderBottom: "1px solid black",
-  padding: "10px 8px",
-  fontSize: "20px",
+  listStyle: 'none',
+  borderBottom: '1px solid black',
+  padding: '10px 8px',
+  fontSize: '20px',
 };
 
 const styles = StyleSheet.create({
   default: {
-    color: "blue",
-    ":hover": {
-      cursor: "pointer",
+    color: 'blue',
+    ':hover': {
+      cursor: 'pointer',
     },
     [screenSize.small]: listItemSmall,
   },
 
   urgent: {
-    color: "red",
-    ":hover": {
-      cursor: "pointer",
+    color: 'red',
+    ':hover': {
+      cursor: 'pointer',
     },
     [screenSize.small]: listItemSmall,
   },
 
   noNotifications: {
-    color: "black",
+    color: 'black',
     [screenSize.small]: listItemSmall,
   },
 });

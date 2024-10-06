@@ -1,12 +1,12 @@
-import { Map } from "immutable";
+import { Map } from 'immutable';
 
 import {
   FETCH_COURSE_SUCCESS,
   SELECT_COURSE,
   UNSELECT_COURSE,
-} from "../actions/courseActionTypes";
+} from '../actions/courseActionTypes';
 
-import coursesNormalizer from "../schema/courses";
+import coursesNormalizer from '../schema/courses';
 
 export const initialCourseState = [];
 
@@ -20,10 +20,10 @@ const courseReducer = (state = Map(initialCourseState), action) => {
       return state.merge(normalizedData);
 
     case SELECT_COURSE:
-      return state.setIn([String(action.index), "isSelected"], true);
+      return state.setIn([String(action.index), 'isSelected'], true);
 
     case UNSELECT_COURSE:
-      return state.setIn([String(action.index), "isSelected"], false);
+      return state.setIn([String(action.index), 'isSelected'], false);
 
     default:
       break;
