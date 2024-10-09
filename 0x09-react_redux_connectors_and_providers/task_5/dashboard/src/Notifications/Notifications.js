@@ -227,6 +227,4 @@ const mapDispatchToProps = {
   fetchNotifications,
 };
 
-// export default Notifications;
-
 export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
