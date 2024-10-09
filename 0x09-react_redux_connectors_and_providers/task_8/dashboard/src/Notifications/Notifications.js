@@ -278,6 +278,4 @@ const mapDispatchToProps = {
   setNotificationFilter,
 };
 
-// export default Notifications;
-
 export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
